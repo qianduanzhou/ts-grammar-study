@@ -64,8 +64,8 @@ let GreenName = Color[1];//Green
 let notSure: any = 4;
 notSure = 'str';
 notSure = false;
-notSure.ifItExists(); // okay, ifItExists might exist at runtime
-notSure.toFixed();// okay, toFixed exists (but the compiler doesn't check)
+// notSure.ifItExists(); // okay, ifItExists might exist at runtime
+// notSure.toFixed();// okay, toFixed exists (but the compiler doesn't check)
 let list: any[] = [1, true, 'aa'];
 list[1] = 100;
 
@@ -117,7 +117,7 @@ function infiniteLoop(): never {
  * 使用object类型，就可以更好的表示像Object.create这样的API
  */
 declare function create(o: object | null): void;
-create(null); // OK
+// create(null); // OK
 // create(42); // Error
 // create("string"); // Error
 // create(false); // Error
