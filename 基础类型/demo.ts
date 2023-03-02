@@ -112,6 +112,18 @@ function infiniteLoop(): never {
 }
 
 /**
+ * unknown
+ * 顶级的unknown类型。 对照于any，unknown是类型安全的。 任何值都可以赋给unknown，
+ * 但是当没有类型断言或基于控制流的类型细化时unknown不可以赋值给其它类型，除了它自己和any外。 
+ * 同样地，在unknown没有被断言或细化到一个确切类型之前，是不允许在其上进行任何操作的。
+ */
+let a: unknown = 1.7;
+// Math.round(a)//会报错，没有进行类型断言前无法使用
+if(typeof a === 'number') {
+    Math.round(a)
+}
+
+/**
  * Object
  * object表示非原始类型，也就是除number，string，boolean，symbol，null或undefined之外的类型。
  * 使用object类型，就可以更好的表示像Object.create这样的API
